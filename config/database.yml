@@ -1,0 +1,24 @@
+defaults: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
+  username: postgres
+  password: postgres
+
+development:
+  <<: *default
+  database: Appsmakerstore_development
+
+test:
+  <<: *default
+  database: Appsmakerstore_test
+
+#   production:
+#     url: <%= ENV['DATABASE_URL'] %>
+#
+# production:
+#   <<: *default
+#   database: Appsmakerstore_production
+#   username: Appsmakerstore
+#   password: <%= ENV['APPSMAKERSTORE_DATABASE_PASSWORD'] %>
